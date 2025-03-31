@@ -1,0 +1,25 @@
+body {
+    min-height: 100vh;
+    color: #ffffff !important;
+    background-color: rgb(70, 70, 70) !important;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(39, 39, 39);
+}
+
+h1 {
+    text-align: center;
+    padding-left: 16px;
+}
+
+.container {
+    height: 89.4vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
