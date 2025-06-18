@@ -23,3 +23,15 @@ h1 {
     align-items: center;
     flex-direction: column; 
 }
+
+.quiz_card {
+    width: 32rem;
+}
+
+.question_footer {
+    border-top: 1px solid rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+}
