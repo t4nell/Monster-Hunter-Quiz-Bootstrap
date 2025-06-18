@@ -25,15 +25,19 @@ function init() {
 
 
 function showQuestion() {
-    let question = questions[currentQuestion];
-    document.getElementById('next_button').disabled = true;
-    document.getElementById('all_questions').innerHTML = questions.length;
-    document.getElementById('question_number').innerHTML = currentQuestion +1;
-    document.getElementById('question_text').innerHTML = question['question']
-    document.getElementById('answer_1').innerHTML = question['answer_1']
-    document.getElementById('answer_2').innerHTML = question['answer_2']
-    document.getElementById('answer_3').innerHTML = question['answer_3']
-    document.getElementById('answer_4').innerHTML = question['answer_4']
+    if (currentQuestion >= questions.length) {
+        //TODO: Show End Screen
+    }else {
+        let question = questions[currentQuestion];
+        document.getElementById('next_button').disabled = true;
+        document.getElementById('all_questions').innerHTML = questions.length;
+        document.getElementById('question_number').innerHTML = currentQuestion +1;
+        document.getElementById('question_text').innerHTML = question['question']
+        document.getElementById('answer_1').innerHTML = question['answer_1']
+        document.getElementById('answer_2').innerHTML = question['answer_2']
+        document.getElementById('answer_3').innerHTML = question['answer_3']
+        document.getElementById('answer_4').innerHTML = question['answer_4']  
+    };
 };
 
 
