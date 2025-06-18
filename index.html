@@ -11,7 +11,7 @@
     <title>Monster Hunter Wilds Quiz</title>
 </head>
 
-<body>
+<body onload="init()">
 
     <header>
         <h1>Monster Hunter Wilds Quiz</h1>
@@ -21,29 +21,29 @@
         <div class="card quiz_card">
             <img src="./assets/imgs/bild_1.jpg" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">Frage</h5>
+                <h5 id="question_text" class="card-title"></h5>
 
-                <div class="card mb-2">
-                    <div class="card-body">An item</div>
+                <div class="card mb-2" onclick="answer('answer_1')">
+                    <div id="answer_1" class="card-body answer_element">An item</div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">An item</div>
+                <div class="card mb-2" onclick="answer('answer_2')">
+                    <div id="answer_2" class="card-body answer_element">An item</div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">An item</div>
+                <div class="card mb-2" onclick="answer('answer_3')">
+                    <div id="answer_3" class="card-body answer_element">An item</div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">An item</div>
+                <div class="card mb-2" onclick="answer('answer_4')">
+                    <div id="answer_4" class="card-body answer_element">An item</div>
                 </div>
 
                 <div class="question_footer">
-                    <span><b>1</b>von<b>5</b>Fragen</span>
+                    <span><b>1</b>von<b id="all_questions"></b>Fragen</span>
                     
                     
-                    <button class="btn btn-primary">Nächste Frage</button>
+                    <button id="next_button" class="btn btn-primary" disabled>Nächste Frage</button>
                 </div>
 
                 

@@ -28,6 +28,17 @@ h1 {
     width: 32rem;
 }
 
+.bg-success,
+.bg-danger {
+    color: white !important;
+}
+
+.answer_element:hover {
+    cursor: pointer;
+    background-color: #b4b4b4;
+    border-radius: 4px;
+}
+
 .question_footer {
     border-top: 1px solid rgba(0,0,0,0.4);
     display: flex;
