@@ -14,7 +14,71 @@ let questions = [
         "answer_3": "9",
         "answer_4": "5",
         "right_answer": 1
-    }
+    },
+    {
+        "question": "Frage: Als was werden die Wächter-Monster im Monsterlexikon kategorisiert?",
+        "answer_1": "Reliktwesen",
+        "answer_2": "Waffe",
+        "answer_3": "Wächter",
+        "answer_4": "Konstrukt",
+        "right_answer": 4
+    },
+    {
+        "question": "Frage: Wie viele Apex-Prädatoren gibt es in Monster Hunter Wilds?",
+        "answer_1": "4",
+        "answer_2": "5",
+        "answer_3": "6",
+        "answer_4": "7",
+        "right_answer": 1
+    },
+    {
+        "question": "Frage: Als was wird Gore Magala kategorisiert?",
+        "answer_1": "Drachenältester",
+        "answer_2": "Semi-Ältester",
+        "answer_3": "Flugwyvern",
+        "answer_4": "Sonderkategorie",
+        "right_answer": 2
+    },
+    {
+        "question": "Frage: Welches Element macht beim Chatacabra an keinem Körperteil Zusatzschaden?",
+        "answer_1": "Feuer",
+        "answer_2": "Wasser",
+        "answer_3": "Eis",
+        "answer_4": "Drache",
+        "right_answer": 4
+    },
+    {
+        "question": "Frage: Wodurch kannst du bei Rathalos vergiftet werden?",
+        "answer_1": "Kopf",
+        "answer_2": "Schwanz",
+        "answer_3": "Krallen",
+        "answer_4": "Flügel",
+        "right_answer": 3
+    },
+    {
+        "question": "Frage: Welchen Trick konnte man bei Gypceros benutzen, um die Flash-Attacke zu kontern?",
+        "answer_1": "Die Angel ausrüsten",
+        "answer_2": "Einen Trank trinken",
+        "answer_3": "Mit dem Fernrohr in die Flash schauen",
+        "answer_4": "Einen Grill platzieren und sich hinsetzen",
+        "right_answer": 3
+    },
+    {
+        "question": "Frage: Wie oft kann man den Schwanz beim Hirabami brechen?",
+        "answer_1": "1",
+        "answer_2": "3",
+        "answer_3": "5",
+        "answer_4": "7",
+        "right_answer": 3
+    },
+    {
+        "question": "Frage: Welches kleine Monster tritt nicht in der Windebene auf?",
+        "answer_1": "Vespoid",
+        "answer_2": "Gajios",
+        "answer_3": "Bulaqchi",
+        "answer_4": "Talioth",
+        "right_answer": 1
+    },
 ];
 
 let currentQuestion = 0;
