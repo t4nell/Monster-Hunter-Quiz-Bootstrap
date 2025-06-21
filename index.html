@@ -18,9 +18,26 @@
     </header>
 
     <div class="container">
+
         <div class="card quiz_card">
-            <img src="./assets/imgs/bild_1.jpg" class="card-img-top">
-            <div class="card-body">
+            <img id="question_img" src="./assets/imgs/bild_1.jpg" class="card-img-top">
+
+            <div class="card-body" id="end_screen" style="display: none;">
+                <h2 class="text_center">
+                    !!! Quiz Beendet !!!
+                </h2>
+
+                <div>
+                    <img class="width_100" src="./assets/imgs/win.png" alt="Win">
+                </div>
+
+                <div class="text_center">
+                    Du hast <b>XXX</b> Fragen von <b>XXX</b> richtig beantwortet.
+                </div>
+                
+            </div>
+
+            <div class="card-body" id="question_body">
                 <h5 id="question_text" class="card-title"></h5>
 
                 <div class="card mb-2" onclick="answer('answer_1')">

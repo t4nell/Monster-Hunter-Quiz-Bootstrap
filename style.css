@@ -4,6 +4,14 @@ body {
     background-color: rgb(70, 70, 70) !important;
 }
 
+.width_100 {
+    width: 100%;
+}
+
+.text_center {
+    text-align: center;
+}
+
 header {
     height: 100px;
     display: flex;

@@ -91,6 +91,9 @@ function init() {
 function showQuestion() {
     if (currentQuestion >= questions.length) {
         //TODO: Show End Screen
+        document.getElementById('end_screen').style = '';
+        document.getElementById('question_body').style = 'display: none';
+        document.getElementById('question_img').style = 'display: none';
     }else {
         let question = questions[currentQuestion];
         document.getElementById('next_button').disabled = true;
