@@ -82,6 +82,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let rightQuestions = 0;
 
 function init() {
     showQuestion()
@@ -94,6 +95,8 @@ function showQuestion() {
         document.getElementById('end_screen').style = '';
         document.getElementById('question_body').style = 'display: none';
         document.getElementById('question_img').style = 'display: none';
+        document.getElementById('amount_of_questions').innerHTML = questions.length;
+        document.getElementById('amount_of_right_questions').innerHTML = rightQuestions;
     }else {
         let question = questions[currentQuestion];
         document.getElementById('next_button').disabled = true;
@@ -114,6 +117,7 @@ function answer(selection) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success')
+        rightQuestions++;
     }else {
         document.getElementById(selection).parentNode.classList.add('bg-danger')
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success')
