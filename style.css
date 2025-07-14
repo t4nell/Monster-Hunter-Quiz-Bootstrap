@@ -55,3 +55,10 @@ h1 {
     align-items: center;
     padding-top: 12px;
 }
+
+.button-row{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}

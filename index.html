@@ -23,19 +23,30 @@
         <div class="card quiz_card">
             <img id="question_img" src="./assets/imgs/bild_1.jpg" class="card-img-top">
 
+            <div id="progress-bar-container"class="progress" style="margin-top: 4px;">
+                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+            </div>
+            <div id="progress-number-container" style="width: 100%; height: 20px; text-align: center;">
+                <p id="progress-number">0%</p>
+            </div>
+                
+
             <div class="card-body" id="end_screen" style="display: none;">
                 <h2 class="text_center">
                     !!! Quiz Beendet !!!
                 </h2>
-
-                <div>
-                    <img class="width_100" src="./assets/imgs/win.png" alt="Win">
+                
+                <div class="text_center">
+                    Du hast <b id="amount_of_right_questions"></b> Fragen von <b id="amount_of_questions"></b> richtig beantwortet.
                 </div>
 
-                <div class="text_center">
-                    Du hast <b id="amount_of_right_questions">XXX</b> Fragen von <b id="amount_of_questions"></b> richtig beantwortet.
+                <div class="button-row">
+                    <button id="" class="btn btn-primary" onclick="restartGame()">Erneut Spielen</button>
                 </div>
                 
+                <div>
+                    <img class="width_100" src="./assets/imgs/win.png" alt="Win">
+                </div> 
             </div>
 
             <div class="card-body" id="question_body">
