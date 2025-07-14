@@ -81,10 +81,14 @@ let questions = [
     },
 ];
 
+
 let currentQuestion = 0;
 let rightQuestions = 0;
 let AUDIO_SUCCESS = new Audio('./assets/audio/good-boy-male-voice-praise-352699.mp3');
 let AUDIO_fail = new Audio('./assets/audio/aww-cute-reaction-6208.mp3');
+let AUDIO_GAME_OVER = new Audio('./assets/audio/game-over-deep-male-voice-clip-352695.mp3');
+let AUDIO_WIN_2 = new Audio('./assets/audio/congratulations-deep-voice-172193.mp3');
+let AUDIO_WIN_1 = new Audio('./assets/audio/winning-218995.mp3');
 
 
 function init() {
@@ -93,32 +97,58 @@ function init() {
 
 
 function showQuestion() {
-    if (currentQuestion >= questions.length) {
-        //TODO: Show End Screen
-        document.getElementById('end_screen').style = '';
-        document.getElementById('question_body').style = 'display: none';
-        document.getElementById('question_img').style = 'display: none';
-        document.getElementById('progress-number-container').style = `display: none`;
-        document.getElementById('progress-bar-container').style = `display: none`;
-        document.getElementById('amount_of_questions').innerHTML = questions.length;
-        document.getElementById('amount_of_right_questions').innerHTML = rightQuestions;
+    if (isQuizComplete()) {
+        displayEndScreen();
     }else {
-        let percent = (currentQuestion + 1) / questions.length;
-        percent = Math.round(percent * 100);
-        document.getElementById('progress-number').innerHTML = `${percent}%`;
-        document.getElementById('progress-bar').style.width = `${percent}%`;
-
-        let question = questions[currentQuestion];
-
-        document.getElementById('next_button').disabled = true;
-        document.getElementById('all_questions').innerHTML = questions.length;
-        document.getElementById('question_number').innerHTML = currentQuestion +1;
-        document.getElementById('question_text').innerHTML = question['question']
-        document.getElementById('answer_1').innerHTML = question['answer_1']
-        document.getElementById('answer_2').innerHTML = question['answer_2']
-        document.getElementById('answer_3').innerHTML = question['answer_3']
-        document.getElementById('answer_4').innerHTML = question['answer_4']  
+        updateProgress();
+        updateNextQuestion();  
     };
+};
+
+
+function isQuizComplete() {
+    return currentQuestion >= questions.length;
+};
+
+
+function updateNextQuestion() {
+    
+    let question = questions[currentQuestion];
+    document.getElementById('next_button').disabled = true;
+    document.getElementById('all_questions').innerHTML = questions.length;
+    document.getElementById('question_number').innerHTML = currentQuestion + 1;
+    document.getElementById('question_text').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+};
+
+
+function updateProgress() {
+    let percent = (currentQuestion + 1) / questions.length;
+    percent = Math.round(percent * 100);
+    document.getElementById('progress-number').innerHTML = `${percent}%`;
+    document.getElementById('progress-bar').style.width = `${percent}%`;
+};
+
+
+function displayEndScreen() {
+    document.getElementById('end_screen').style = '';
+    document.getElementById('question_body').style = 'display: none';
+    document.getElementById('question_img').style = 'display: none';
+    document.getElementById('progress-number-container').style = `display: none`;
+    document.getElementById('progress-bar-container').style = `display: none`;
+    document.getElementById('amount_of_questions').innerHTML = questions.length;
+    document.getElementById('amount_of_right_questions').innerHTML = rightQuestions;
+    if (rightQuestions === questions.length) {
+        AUDIO_WIN_1.addEventListener('ended', function() {
+            AUDIO_WIN_2.play();
+        });
+        AUDIO_WIN_1.play();
+    } else {
+        AUDIO_GAME_OVER.play();
+    }
 };
 
 
@@ -126,7 +156,7 @@ function answer(selection) {
     let question = questions[currentQuestion];
     let selectedQuestionNumber = selection.slice(-1);
     let idOfRightAnswer = `answer_${question['right_answer']}`;
-    if (selectedQuestionNumber == question['right_answer']) {
+    if (isAnswerCorrect(selectedQuestionNumber, question)) {
         document.getElementById(selection).parentNode.classList.add('bg-success')
         AUDIO_SUCCESS.play();
         rightQuestions++;
@@ -136,6 +166,11 @@ function answer(selection) {
         AUDIO_fail.play();
     };
     document.getElementById('next_button').disabled = false;
+};
+
+
+function isAnswerCorrect(selectedQuestionNumber, question) {
+    return selectedQuestionNumber == question['right_answer'];
 };
 
 
@@ -168,4 +203,4 @@ function restartGame() {
     rightQuestions = 0;
     currentQuestion = 0;
     init();
-}
+};
